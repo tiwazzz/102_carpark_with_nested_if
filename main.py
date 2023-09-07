@@ -1,6 +1,6 @@
 numPlate = str(input("ป้อนเลขทะเบียนรถยนต์: "))
 hours = int(input("ชั่วโมงการจอดรถยนต์: "))
-buyChoice = str(input("ได้ซื้อของหรือไม่ (หากใช่ให้พิมพ์ yes หรือ y หากไม่ได้ซื้อให้พิมพ์ no หรือ n): "))
+buyChoice = str(input("ได้ซื้อของหรือไม่ (หากใช่ให้พิมพ์ yes หรือ y หากไม่ใช่ให้พิมพ์ no หรือ n): "))
 
 # Configuration
 promotion = 20
@@ -10,12 +10,11 @@ receipt = 0
 if buyChoice == "yes" or buyChoice == "y":
     receipt = float(input("กรุณาป้อนยอดใบเสร็จของคุณ: "))
     if hours <= 3:
-        discount = 0
         price = promotion
     elif hours <= 24:
         discount = receipt*0.05
         hoursMinus = hours-3
-        price = promotion + (hoursMinus*20) - discount
+        price = (promotion + (hoursMinus*20)) - discount
     else:
         discount = receipt*0.05
         hoursMinus = hours-24
