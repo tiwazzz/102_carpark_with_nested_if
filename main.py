@@ -21,7 +21,7 @@ if buyChoice == "yes" or buyChoice == "y":
         hoursMinus = hours-24
         price = (promotion + (21*20) + (hoursMinus*10)) - discount
 
-elif buyChoice == "no" or buyChoice == "n":
+else:
     if hours <= 3:
         price = 20
     elif hours <= 24:
